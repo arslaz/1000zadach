@@ -264,3 +264,277 @@ void series 4() {
 		}
 		cout << b;
 	}
+	void series21() {
+		int size, a = 0, b = 0;
+		cin >> size;
+
+		float ara[1000]{};
+
+		for (int i = 0; i < size; i++) {
+			cin >> ara[i];
+		}
+		for (int j = 0; j < size; j++) {
+
+			if (a > ara[j]) {
+				cout << false;
+				return(0);
+			}
+			a = ara[j];
+		}
+		cout << true;
+	}
+	void series22() {
+		int size, a = 1000, b = 0;
+		cin >> size;
+
+		float ara[1000]{};
+
+		for (int i = 0; i < size; i++) {
+			cin >> ara[i];
+		}
+		for (int j = 0; j < size; j++) {
+
+			if (a < ara[j]) {
+				cout << ara[j];
+				return(0);
+			}
+			a = ara[j];
+		}
+		cout << false;
+	}
+	void series23() {
+		int size, a = 0, b = 0;
+		cin >> size;
+
+		float ara[1000]{};
+
+		for (int i = 0; i < size; i++) {
+			cin >> ara[i];
+		}
+		for (int j = 0; j < size; j++) {
+			b = ara[j + 1];
+			if (a == ara[j] || b == ara[j]) {
+				cout << ara[j];
+				return(0);
+			}
+			a = ara[j];
+		}
+		cout << false;
+	}
+		void series25() {
+			int size, a = 0, b = 0, sum = 0;
+			cin >> size;
+
+			float ara[1000]{};
+
+			for (int i = 0; i < size; i++) {
+				cin >> ara[i];
+			}
+			for (int j = 0; j < size; j++) {
+				if (ara[j] == 0) {
+					a = j;
+					for (int g = j + 1; g < size; g++) {
+						if (ara[g] == 0) {
+							b = g;
+							for (int r = a; r < b; r++) {
+								sum += ara[r];
+
+							}
+							cout << sum;
+							return(0);
+						}
+					}
+				}
+
+			}
+
+			cout << false;
+
+
+
+	}
+		void series26() {
+			int size, b, k;
+			cin >> size >> k;
+			int ara[1000]{};
+			for (int i = 0; i < size; i++) {
+				cin >> ara[i];
+			}
+			for (int j = 0; j < size; j++) {
+				int a = 1;
+				for (int g = 0; g <= k; g++) {
+
+					a = a * ara[j];
+				}
+				cout << "A" << j + 1 << "в степени " << k << "=" << a << endl;
+			}
+		}
+		void series27() {
+			int size;
+			cin >> size;
+			int ara[1000]{};
+			for (int i = 0; i < size; i++) {
+				cin >> ara[i];
+			}
+			for (int j = 0; j < size; j++) {
+				int a = 1;
+				for (int g = 1; g <= j + 1; g++) {
+
+					a = a * ara[j];
+				}
+				cout << "A" << j + 1 << "в степени " << "=" << a << endl;
+			}
+		}
+		void series28() {
+			int size, b = 0;
+			cin >> size;
+			int ara[1000]{};
+			for (int i = 0; i < size; i++) {
+				cin >> ara[i];
+			}
+			for (int j = 0; j < size; j++) {
+				int a = 1;
+				b = size - j;
+				for (int g = 1; g <= b; g++) {
+
+					a = a * ara[j];
+				}
+				cout << "A" << j + 1 << "в степени " << "=" << a << endl;
+			}
+
+		}
+		void series29() {
+			int size, b = 0, k;
+			cin >> k >> size;
+			int ara[1000]{};
+			for (int i = 0; i < k; i++) {
+				cout << "набор " << i + 1 << endl;
+				for (int j = 0; j < size; j++) {
+					cout << "элемент " << j + 1 << endl;
+					cin >> ara[j];
+					b += ara[j];
+				}
+			}
+			cout << b;
+		}
+		void series30() {
+			int size, b = 0, k;
+			cin >> k >> size;
+			int ara[1000]{};
+			for (int i = 0; i < k; i++) {
+				cout << "набор " << i + 1 << endl;
+				b = 0;
+				for (int j = 0; j < size; j++) {
+					cout << "элемент " << j + 1 << endl;
+					cin >> ara[j];
+					b += ara[j];
+				}
+				cout << "сумма " << i + 1 << " набора=" << b << endl;
+			}
+		}
+		void series31() {
+			int size, b = 0, a = 0, k;
+			cin >> k >> size;
+			int ara[1000]{};
+			for (int i = 0; i < k; i++) {
+				cout << "набор " << i + 1 << endl;
+				for (int j = 0; j < size; j++) {
+					cout << "элемент " << j + 1 << endl;
+					cin >> ara[j];
+					if (ara[j] == 2) {
+						++b;
+					}
+				}
+				if (b > 0) {
+					b = 1;
+				}
+				a += b;
+			}
+			if (a > 0) {
+				cout << a;
+			}
+			else {
+				cout << false;
+			}
+		}
+		void series32() {
+			int size, b = 0, a = 0, k;
+			cin >> k >> size;
+			int ara[1000]{};
+			for (int i = 0; i < k; i++) {
+				cout << "набор " << i + 1 << endl;
+				b = 0;
+
+				for (int j = 0; j < size; j++) {
+					cout << "элемент " << j + 1 << endl;
+					cin >> ara[j];
+					if (ara[j] == 2) {
+						++b;
+						a = j + 1;
+					}
+					if (b == 1) {
+						cout << "первый элемент который равен 2=" << a << endl;
+					}
+					if (b == 0) {
+						cout << "в данном наборе нет такого элемента" << endl;
+					}
+
+				}
+
+			}
+
+		}
+		void series33() {
+			int size, b = 0, a = 0, k;
+			cin >> k >> size;
+			int ara[1000]{};
+			for (int i = 0; i < k; i++) {
+				cout << "набор " << i + 1 << endl;
+				b = 0;
+
+				for (int j = 0; j < size; j++) {
+					cout << "элемент " << j + 1 << endl;
+					cin >> ara[j];
+					if (ara[j] == 2) {
+						++b;
+						a = j + 1;
+					}
+
+				}
+				if (b == 1) {
+					cout << "последний элемент который равен 2=" << a << endl;
+				}
+				if (b == 0) {
+					cout << "в данном наборе нет такого элемента" << endl;
+				}
+
+			}
+		}
+		void series34() {
+			int size, b = 0, a = 0, k;
+			cin >> k >> size;
+			int ara[1000]{};
+			for (int i = 0; i < k; i++) {
+				cout << "набор " << i + 1 << endl;
+				b = 0;
+
+				for (int j = 0; j < size; j++) {
+					cout << "элемент " << j + 1 << endl;
+					cin >> ara[j];
+					a += ara[j];
+					if (ara[j] == 2) {
+						++b;
+
+					}
+
+				}
+
+				if (b > 0) {
+
+					cout << "сумма элементов=" << a << endl;
+				}
+				else {
+					cout << false;
+				}
+			}
+		}
